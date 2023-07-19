@@ -7,7 +7,7 @@ function JuegoDetalle() {
   const { id } = useParams();
 
   useEffect(() => {
-    const fetchJuego = async (req, res) => {
+    const fetchJuego = async () => {
       try {
         const juegoService = new JuegoService();
         const response = await juegoService.getJuegoById(id);

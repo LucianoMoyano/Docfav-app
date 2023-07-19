@@ -1,7 +1,8 @@
 import axios from "axios";
 
 class JuegoService {
-  apiUrl = "https://www.freetogame.com/api/games";
+  apiUrl =
+    "https://cors-anywhere.herokuapp.com/https://www.freetogame.com/api/games";
 
   getJuegos(id) {
     return axios.get(`${this.apiUrl}?id=${id}`);

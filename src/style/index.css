@@ -1,6 +1,11 @@
 body {
   background-color: #121212;
   color: #fff;
+  display: flex;
+  justify-content: center; /* Centra horizontalmente el contenido */
+  align-items: center; /* Centra verticalmente el contenido */
+  height: 100vh; /* Establece la altura del body al 100% del viewport */
+  margin: 0;
 }
 
 .container {
