@@ -7,10 +7,10 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "jest --transformIgnorePatterns \"/node_modules/\" --detectOpenHandles"
   },
   "dependencies": {
-    "@testing-library/react": "^14.0.0",
     "axios": "^1.4.0",
     "bootstrap": "^5.3.0",
     "react": "^18.2.0",
@@ -19,15 +19,24 @@
     "react-router-dom": "^6.14.2"
   },
   "devDependencies": {
+    "@babel/plugin-syntax-jsx": "^7.22.5",
+    "@babel/preset-env": "^7.22.9",
+    "@babel/preset-react": "^7.22.5",
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^14.0.0",
     "@types/jasmine": "^4.3.5",
     "@types/react": "^18.2.14",
     "@types/react-dom": "^18.2.6",
     "@vitejs/plugin-react": "^4.0.1",
+    "babel-jest": "^29.6.1",
     "eslint": "^8.44.0",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.1",
+    "esm": "^3.2.25",
     "jasmine": "^5.0.2",
+    "jest": "^29.6.1",
+    "jest-environment-jsdom": "^29.6.1",
     "vite": "^4.4.0"
   }
 }
