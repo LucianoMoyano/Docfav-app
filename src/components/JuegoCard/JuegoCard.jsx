@@ -1,6 +1,6 @@
 import React from "react";
 
-export const JuegoCard = () => {
+function JuegoCard() {
   return (
     <>
       <div className="juego-card">
@@ -10,4 +10,5 @@ export const JuegoCard = () => {
       </div>
     </>
   );
-};
+}
+export default JuegoCard;

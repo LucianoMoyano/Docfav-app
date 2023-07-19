@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import JuegoService from "../../services/JuegoService";
 
-export const JuegoDetalle = () => {
+function JuegoDetalle() {
   const [juego, setJuego] = useState(null);
   const { id } = useParams();
 
@@ -33,4 +33,6 @@ export const JuegoDetalle = () => {
       ;
     </>
   );
-};
+}
+
+export default JuegoDetalle;

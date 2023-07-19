@@ -27,3 +27,5 @@ class JuegoService {
     });
   }
 }
+
+export default JuegoService;
