@@ -3,12 +3,12 @@ import axios from "axios";
 class JuegoService {
   apiUrl = "https://www.freetogame.com/api/games";
 
-  getJuegos() {
-    return axios.get("${this.apiUrl}?id=${id}");
+  getJuegos(id) {
+    return axios.get(`${this.apiUrl}?id=${id}`);
   }
 
   getJuegoById(id) {
-    return axios.get("${this.apiUrl}?id=${id}");
+    return axios.get(`${this.apiUrl}?id=${id}`);
   }
 
   filtrarJuegos(juegos, filtroNombre, filtroGenero, filtroPlataforma) {

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Link, Route, Routes } from "react-router-dom";
 import { Container, Form, Button } from "react-bootstrap";
 
 //imports components
@@ -12,28 +12,29 @@ import JuegoService from "./services/JuegoService";
 import "./App.css";
 
 function App() {
-  const [juegos, setJuegos] = useState("");
+  const [juegos, setJuegos] = useState([]);
+  const [filtroNombre, setFiltroNombre] = useState("");
   const [filtroGenero, setFiltroGenero] = useState("");
   const [filtroPlataforma, setFiltroPlataforma] = useState("");
 
   useEffect(() => {
-    const fetchJuego = async (req, res) => {
+    const fetchJuego = async () => {
       try {
         const juegoService = new JuegoService();
-        const response = await juegoService.getJuegoById(id);
-        setJuego(response.data);
+        const response = await juegoService.getJuegos(id);
+        setJuegos(response.data);
       } catch (error) {
         console.error("Error al obtener el juego", error);
       }
     };
     fetchJuego();
-  }, []);
+  }, [id]);
 
   const handleFiltrar = (event) => {
     event.preventDefault();
 
-    const juegosService = new JuegosService();
-    const juegosFiltrados = juegosService.filtrarJuegos(
+    const juegoService = new JuegoService();
+    const juegosFiltrados = juegoService.filtrarJuegos(
       juegos,
       filtroNombre,
       filtroGenero,
@@ -65,7 +66,6 @@ function App() {
               onChange={(e) => setFiltroGenero(e.target.value)}
             >
               <option value="">Todos los géneros</option>
-              {/* Opciones de género */}
             </Form.Control>
           </Form.Group>
 
@@ -77,7 +77,6 @@ function App() {
               onChange={(e) => setFiltroPlataforma(e.target.value)}
             >
               <option value="">Todas las plataformas</option>
-              {/* Opciones de plataforma */}
             </Form.Control>
           </Form.Group>
 
@@ -93,12 +92,11 @@ function App() {
             </Link>
           ))}
         </div>
-
-        <Switch>
-          <Route path="/juego/:id">
-            <JuegoDetalle />
-          </Route>
-        </Switch>
+        <Router>
+          <Routes>
+            <Route path="/juego/:id" element={<JuegoDetalle />}></Route>
+          </Routes>
+        </Router>
       </Container>
     </>
   );
