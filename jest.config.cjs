@@ -4,6 +4,7 @@ module.exports = {
   transform: {
     "^.+\\.(js|jsx)$": "babel-jest",
     "^.+\\.css$": "babel-jest",
+    "^.+\\.css$": "jest-css-modules-transform",
   },
   testPathIgnorePatterns: ["/node_modules/", "/utils/"],
   transformIgnorePatterns: [

@@ -14,16 +14,13 @@ class JuegoService {
 
   filtrarJuegos(juegos, filtroNombre, filtroGenero, filtroPlataforma) {
     return juegos.filter((juego) => {
-      const nombreValido = juego.title
-        .toLowerCase()
-        .includes(filtroNombre.toLowerCase());
+      const nombreValido = juego.title.toLowerCase().includes(filtroNombre);
       const generoValido =
-        filtroGenero === "" ||
-        juego.genre.toLowerCase() === filtroGenero.toLowerCase();
+        filtroGenero === "" || juego.genre.toLowerCase() === filtroGenero;
       const plataformaValida =
         filtroPlataforma === "" ||
-        juego.platform.toLowerCase() === filtroPlataforma.toLowerCase();
-
+        juego.platform.toLowerCase() === filtroPlataforma;
+      //return juegos;
       return nombreValido && generoValido && plataformaValida;
     });
   }

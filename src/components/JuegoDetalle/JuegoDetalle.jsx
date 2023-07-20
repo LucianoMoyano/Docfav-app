@@ -25,7 +25,7 @@ function JuegoDetalle() {
 
   return (
     <>
-      <div className="juego-detalles">
+      <div className="juego-grid">
         <h2>{juego.title}</h2>
         <img src={juego.thumbnail} alt={juego.title} />
         <p>{juego.description}</p>

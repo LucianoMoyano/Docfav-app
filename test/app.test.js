@@ -4,6 +4,7 @@ import "@testing-library/jest-dom/extend-expect"; // Asegúrate de tener esta im
 
 import App from "../src/App";
 
+jest.mock("../src/App.css", () => "identity-obj-proxy");
 test("renders app", () => {
   render(<App />);
   const titleElement = screen.getByText("Juegos");
